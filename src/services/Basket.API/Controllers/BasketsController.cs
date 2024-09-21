@@ -30,6 +30,7 @@ namespace Basket.API.Controllers
             //if basket is null , create new shopping cart
             return Ok(basket ?? new ShoppingCart(username));
         }
+
         [HttpPost]
         [ProducesResponseType(typeof(ShoppingCart), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<ShoppingCart>> UpdateBasket(ShoppingCart basket)
@@ -37,6 +38,7 @@ namespace Basket.API.Controllers
 
             return Ok(await _repository.UpdateBasket(basket));
         }
+
         [HttpDelete("{userName}", Name = "DeleteBasket")]
         [ProducesResponseType(typeof(void), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> DeleteBasket(string userName)

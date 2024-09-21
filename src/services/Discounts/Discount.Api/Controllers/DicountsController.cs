@@ -18,6 +18,7 @@ namespace Discount.Api.Controllers
             _couponRepository = couponRepository;
             _mapper = mapper;
         }
+
         // GET: api/<DicountsController>
         [HttpGet]
         public async Task<IEnumerable<CouponDto>> Get()
